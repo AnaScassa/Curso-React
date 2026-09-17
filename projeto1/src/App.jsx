@@ -5,6 +5,8 @@ import Events from "./components/Events";
 import ManageData from "./components/ManageData";
 import ListRender from "./components/ListRender";
 import ConditionalRender from "./components/CondicionalRender";
+import { ShowUserName } from "./components/ShowUserName";
+import { CarDetails } from "./components/CarDetails";
 
 //style / css
 import './App.css'
@@ -23,6 +25,11 @@ function App() {
       <br />
       <ListRender />
       <ConditionalRender/>
+      <br />
+      <br />
+      <br />
+      <ShowUserName name="Matheus"/>
+      <CarDetails brand="BMW" km={100000} color="Azul"/>
     </div> 
   )
 }

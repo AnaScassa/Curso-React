@@ -90,3 +90,78 @@ Geralmente usamos o `id` do próprio dado:
 ```
 
 A `key` ajuda o React a **identificar cada item e atualizar a lista corretamente** quando ela muda.
+
+# Operador Ternário
+
+O operador ternário é usado no React para **fazer condições diretamente no JSX**.
+Ele funciona como um `if/else` simplificado:
+
+```jsx
+condição ? resultadoSeVerdadeiro : resultadoSeFalso
+```
+
+Exemplo:
+
+```jsx
+{logado ? <p>Bem-vindo!</p> : <p>Faça login.</p>}
+```
+
+* Se `logado` for `true` → mostra **"Bem-vindo!"**.
+* Se `logado` for `false` → mostra **"Faça login."**.
+
+# Props
+
+`Props` são informações que podemos **passar de um componente pai para um componente filho**.
+É como passar parâmetros para um componente.
+
+```jsx
+function App() {
+  return <Usuario nome="Ana" />;
+}
+
+function Usuario(props) {
+  return <p>Olá, {props.nome}!</p>;
+}
+```
+
+Também podemos desestruturar as props:
+
+```jsx
+function Usuario({ nome }) {
+  return <p>Olá, {nome}!</p>;
+}
+```
+
+* `nome="Ana"` → prop enviada pelo componente pai.
+* `{ nome }` → prop recebida pelo componente filho.
+
+# Desestruturação de Props
+
+A desestruturação permite **pegar as props diretamente nos parâmetros do componente**, sem precisar usar `props.nome`.
+Sem desestruturação:
+
+```jsx
+function Usuario(props) {
+  return <p>{props.nome}</p>;
+}
+```
+
+Com desestruturação:
+
+```jsx
+function Usuario({ nome }) {
+  return <p>{nome}</p>;
+}
+```
+
+Também podemos receber várias props:
+
+```jsx
+function Usuario({ nome, idade }) {
+  return <p>{nome} - {idade} anos</p>;
+}
+```
+
+* `{ nome, idade }` → pega as props diretamente.
+* Deixa o código **mais curto e fácil de ler**.
+
