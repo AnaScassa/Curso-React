@@ -2,6 +2,7 @@
 import FirstComponent from "./components/FirstComponent";
 import TemplateExpressions from "./components/TemplateExpressions";
 import Events from "./components/Events";
+import ManageData from "./components/ManageData";
 
 //style / css
 import './App.css'
@@ -14,6 +15,7 @@ function App() {
       <TemplateExpressions />
       <br />
       <Events />
+      <ManageData />
     </div>
   )
 }
