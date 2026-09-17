@@ -3,6 +3,8 @@ import FirstComponent from "./components/FirstComponent";
 import TemplateExpressions from "./components/TemplateExpressions";
 import Events from "./components/Events";
 import ManageData from "./components/ManageData";
+import ListRender from "./components/ListRender";
+import ConditionalRender from "./components/CondicionalRender";
 
 //style / css
 import './App.css'
@@ -16,7 +18,12 @@ function App() {
       <br />
       <Events />
       <ManageData />
-    </div>
+      <br />
+      <br />
+      <br />
+      <ListRender />
+      <ConditionalRender/>
+    </div> 
   )
 }
 

@@ -78,3 +78,15 @@ Para alterar:
 setNome("Caroline");
 ```
 
+# A propriedade `key`
+
+O React precisa de uma `key` **única** para cada item de uma lista.
+Geralmente usamos o `id` do próprio dado:
+
+```jsx
+{usuarios.map(usuario => (
+  <p key={usuario.id}>{usuario.nome}</p>
+))}
+```
+
+A `key` ajuda o React a **identificar cada item e atualizar a lista corretamente** quando ela muda.
