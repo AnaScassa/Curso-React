@@ -165,3 +165,41 @@ function Usuario({ nome, idade }) {
 * `{ nome, idade }` → pega as props diretamente.
 * Deixa o código **mais curto e fácil de ler**.
 
+# A propriedade `children`
+
+A prop `children` permite **passar conteúdo dentro de um componente**, que pode ser acessado pelo componente filho.
+Exemplo:
+
+```jsx
+function App() {
+  return (
+    <Card>
+      <p>Olá, Ana!</p>
+    </Card>
+  );
+}
+
+function Card({ children }) {
+  return <div>{children}</div>;
+}
+```
+
+* `children` → recebe o conteúdo que foi colocado dentro do componente.
+* Pode receber textos, elementos HTML ou outros componentes.
+
+# State Lifting
+
+**State Lifting** significa **elevar o estado** para um componente pai, para que ele possa ser compartilhado entre componentes filhos.
+O estado fica no componente pai e é passado para os filhos através de **props**.
+
+```jsx
+function App() {
+  const [nome, setNome] = useState("");
+
+  return <Input nome={nome} setNome={setNome} />;
+}
+```
+
+* O estado fica no **componente pai**.
+* O pai passa o estado e sua função de alteração através de **props**.
+* Assim, diferentes componentes podem **compartilhar e alterar o mesmo estado**.
