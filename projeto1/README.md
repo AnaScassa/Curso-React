@@ -191,6 +191,8 @@ function Card({ children }) {
 
 **State Lifting** significa **elevar o estado** para um componente pai, para que ele possa ser compartilhado entre componentes filhos.
 O estado fica no componente pai e é passado para os filhos através de **props**.
+A regra de ouro é: se dois ou mais componentes precisam acessar o mesmo useState, você deve tirar o estado de dentro deles e movê-lo 
+para o componente pai mais próximo que envolve ambos.
 
 ```jsx
 function App() {
@@ -203,3 +205,68 @@ function App() {
 * O estado fica no **componente pai**.
 * O pai passa o estado e sua função de alteração através de **props**.
 * Assim, diferentes componentes podem **compartilhar e alterar o mesmo estado**.
+
+# CSS Module
+
+CSS Modules permitem criar estilos **isolados para cada componente**, evitando conflitos entre classes.
+Para usar, crie um arquivo com o nome:
+
+```text
+NomeDoComponente.module.css
+```
+
+Depois, importe o arquivo no componente:
+
+```jsx
+import styles from "./NomeDoComponente.module.css";
+```
+
+E use as classes através de `styles`:
+
+```jsx
+<div className={styles.container}>
+```
+
+Assim, os estilos ficam **específicos daquele componente**.
+
+# Formulários
+
+No React, podemos controlar os valores dos campos de um formulário usando **state**.
+
+```jsx
+const [name, setName] = useState();
+```
+
+O `onChange` é executado sempre que o usuário **altera o valor do input**:
+
+```jsx
+<input onChange={handleName} value={name} />
+```
+
+A função recebe o evento e podemos pegar o valor digitado usando:
+
+```jsx
+e.target.value
+```
+
+Depois, usamos o `setName` para atualizar o estado.
+
+### onSubmit
+
+O `onSubmit` é executado quando o formulário é enviado:
+
+```jsx
+<form onSubmit={handleSubmit}>
+```
+
+Podemos usar `e.preventDefault()` para **impedir o comportamento padrão do formulário**, evitando que a página seja recarregada.
+
+```jsx
+const handleSubmit = (e) => {
+    e.preventDefault();
+};
+```
+
+Assim, o React consegue **controlar os dados do formulário através dos estados**.
+
+

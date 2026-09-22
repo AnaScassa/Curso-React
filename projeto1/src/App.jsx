@@ -10,6 +10,7 @@ import { CarDetails } from "./components/CarDetails";
 import { Container } from "./components/Container";
 import ExecuteFuncion from "./components/ExecuteFuncion";
 import ChangeMassageState from "./components/ChangeMassageState";
+import MyForm from "./components/MyForm";
 
 //style / css
 import './App.css'
@@ -67,7 +68,12 @@ function App() {
     <ExecuteFuncion myFuncion={showMessage} />
     <Massage msg={massage}/>
     <ChangeMassageState handleMassage={handleMassage}/>
+    <br/>
+    <br />
+    <br /> 
+    <MyForm/>
     </div> 
+    
   )
 }
 
